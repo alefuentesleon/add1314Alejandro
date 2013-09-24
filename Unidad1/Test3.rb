@@ -1,10 +1,10 @@
 #! /usr/bin/ruby
 # ENCODIMG UTF-8
+print "Introduce crear o eliminar: "
+a=gets.chomp
 
-a=ARGV.first
-puts a
 
-if a==1 then 
+if a=="crear" then 
 	system ("mkdir curso2")
 	system ("mkdir curso2/add")
 	system ("mkdir curso2/sgy")
