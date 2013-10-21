@@ -1,0 +1,66 @@
+<chapter>
+	<title>Clientes ligeros</title>
+<sect1>
+                <title>Configuración del Servidor LTSP</title>
+                
+                <para>Como ya sabemos tenemos que tener dos adaptadores de red en el servidor uno para el acceso a internet, y otro para la red interna.
+                </para>
+                 <para>Lo primero que yo hago es establecer una ip estática al adaptador de red interna en mi caso eth1:                </para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/ipstatic.PNG"/>
+                </imageobject>
+                <para>Por otro lado, nos cambiamos el hostname de nuestro servidor:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/hostname.PNG"/>
+                </imageobject>
+                <para>También establecemos un dominio:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/dominio.PNG"/>
+                </imageobject>
+                 <para>Instalamos ahora el LTSP en nuestro servidor:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/installtsp.PNG"/>
+                </imageobject>
+                <para>Ahora creamos la imagen LTSP, lo cual nos llevará un buen rato:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/imagenltsp.PNG"/>
+                </imageobject>
+                <para>Modificamos ahora el archivo NetworkManager.conf dándole el valor true donde pone false:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/net-mana.PNG"/>
+                </imageobject>
+                <para>Como en mi caso no he seguido la configuración por defecto que aconseja la página ofical de LTSP, y he querido utilizar una configuracion determinada para el adaptador de red interna, tenemos que comunicarselo a los archivos de configuración LTSP, en este caso dhcp.conf el cual esta dentro de /etc/tlsp. Lo establecemos de la siguiente manera:</para>
+				<imageobject>
+                             <imagedata scale="50" fileref="imagenes/dhcp-conf.PNG"/>
+                </imageobject>
+                <para>Luego modificamos también el fichero /etc/default/isc-dhcp-server en el cual pondremos el adaptador de red destinado al LTSP en mi caso el eth1:</para>
+				<imageobject>
+                             <imagedata scale="50" fileref="imagenes/isc-dhcp.PNG"/>
+                </imageobject>
+				<para>Para ir acabando con el servidor lo que hacemos es reiniciar el servicio DHCP con /etc/init.d/isc-dhcp-server restart
+				</para>
+				<para>Por último reiniciamos el servicio tftpd-hpa con /etc/init.d/tftpd-hpa restart</para>
+				
+				<para>Seria interesante también crearnos unos usuarios, los cuales usaran los clientes para iniciar el sistema en red:</para>
+<imageobject>
+                             <imagedata scale="50" fileref="imagenes/usuarios.PNG"/>
+                </imageobject>
+</sect1>
+<sect1>
+	<title>Configuración del cliente</title>
+<para>Lo único que tenemos que hacer para la máquina cliente, es configurar una máquina virtual en red interna, la cual no tenga dispositivos de almacenamiento, de esta manera iniciará automaticamente por red gracias al servidor LTSP</para>
+
+
+</sect1>
+
+<sect1>
+	<title>Comprobación final</title>
+<para>Para hacer la comprobación final he hecho un video donde podemos observar como funciona correctamente:
+<para><ulink url="http://www.youtube.com/watch?v=AD4xz2fUgMs">Video LTSP</ulink>
+</para>
+</para>
+
+
+</sect1>
+</chapter>
+	
