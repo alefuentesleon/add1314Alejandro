@@ -1,0 +1,87 @@
+<chapter>
+	<title>Acceso Remoto</title>
+<sect1>
+                <title>Escritorio remoto con VNC</title>
+                
+                <para>Instalar y configurar VNC para poder acceder a una máquina remota.
+                </para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/1"/>
+                </imageobject>
+                <para>Aquí accedemos desde un Cliente Windows al servidor Windows</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/2"/>
+                </imageobject>
+                <para>Aquí accedemos desde un Cliente Linux al servidor Windows</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/3"/>
+                </imageobject>
+                 <para>Instalamos las herramientas VNC en linux</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/4"/>
+                </imageobject>
+                <para>Aquí accedemos desde un Cliente Linux al servidor Linux</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/6"/>
+                </imageobject>
+                <para>Aquí accedemos desde un Cliente Windows al servidor Linux</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/5"/>
+                </imageobject>
+</sect1>
+<sect1>
+				<title>Escritorio Remoto con RDP</title>
+                <para>En Windows usamos el escritorio remoto, una herramienta que ya viene instalada.</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/6.5"/>
+                </imageobject>
+                <para>Aquí accedemos a Windows Server 2008 desde Windows7</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/7"/>
+                </imageobject>
+                <para>Aquí accedemos a Windows Server 2008 desde Linux</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/9"/>
+                </imageobject>
+                <para>Aquí accedemos a Linux desde Windows instalando en Linux la herramienta xrdp</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/10"/>
+                </imageobject>
+</sect1>
+								
+<sect1>
+	 <title>Terminal Server</title>
+				<para>Asistencia de instalación.</para>
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/13"/>
+				</imageobject>
+				<para>Demostración de que está funcionando de manera correcta el Terminal Server.</para>
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/14"/>
+				</imageobject>
+				<para>Probando una aplicación con el Terminal Server en Windows.</para>	
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/15"/>
+				</imageobject>
+				<para>Probando una aplicación con el Terminal Server en Debian.</para>	
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/16"/>
+				</imageobject>
+</sect1>
+
+<sect1>
+			
+				<title>RemoteApp</title>
+				<para>Programas añadidos para RemoteApp.</para>	
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/22"/>
+				</imageobject>
+				<para>Iniciando el RemoteApp.</para>
+				<imageobject>
+							<imagedata scale="50" fileref="imagenes/23"/>
+				</imageobject>
+		
+</sect1>
+
+</chapter>
+	

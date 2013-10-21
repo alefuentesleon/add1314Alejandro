@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="es">
+	
+<info>
+   <title>
+Trabajos curso completo
+   </title>
+   <author>
+		<personname>
+			<firstname>Alejandro</firstname>
+			<surname>Fuentes León</surname>
+		</personname>
+   </author>
+</info>
+
+<xi:include href="activity1.xml" />
+
+
+</book>
+
