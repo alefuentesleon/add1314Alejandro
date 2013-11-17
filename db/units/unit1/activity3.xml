@@ -1,0 +1,222 @@
+<chapter>
+	<title>Acceso remoto SSH </title>
+<sect1>
+                
+                
+                <title>1. Linux </title>
+                <sect1>
+					<title>Preparativos</title>
+                <para>Configuramos las máquinas clientes y servidor tal y como nos dice el ejercicio. Usaremos:</para>
+               <para>-Un servidor Xubuntu</para>
+               <para>-Un cliente Opensuse</para>
+               <para>-Un cliente Windows</para>
+                </sect1>
+               
+               
+               <sect1>
+					<title>Instalación básica</title>
+                <para>En el servidor linux instalaremos la herramienta SSH para el mismo.</para>
+               <para>Haremos lo mismo para el cliente Opensuse, esta vez, le instalaremos la herramienta para cliente.</para>
+                
+               <para>En el cliente windows usaremos el PuTTY, el cual solo hace falta ejecutar.</para>
+               <para>Ahora probaremos a conectarnos al servidor desde el cliente linux:</para>
+               
+				<imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/opensuseconexionclient1.png"/>
+                </imageobject>
+               
+               <para>Luego probaremos a conectarnos con la herramienta PuTTY desde el cliente windows: </para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/windowsputtyconexionclient2.png"/>
+                </imageobject>
+               <para>Crearemos un clave mediante el comando ssh-keygen:</para>
+                 <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/generarkeygen.png"/>
+                </imageobject>
+               </sect1>
+               
+               
+               
+                <sect1>
+					<title>Personalización del prompt Bash</title>
+                <para>Aquí simplemente lo que haremos es modificar el archivo bash para que se cambie el color del prompt cuando un cliente se conecte.</para>
+                <para>Aqui estamos modificando el archivo:</para>
+				
+				<imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/bash1.png"/>
+                </imageobject>
+                <para>Ahora comprobamos su funcionamiento:</para>
+				
+				<imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/bash2.png"/>
+                </imageobject>
+                </sect1>
+
+
+
+				<sect1>
+					<title>Autenticación mediante claves públicas</title>
+                <para>Empezaremos por generar una clave publica</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/publica1.png"/>
+                </imageobject>
+			   <para>Ahora asociaremos la clave creada a el usuario deseado:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/public2.png"/>
+                </imageobject>
+               <para>Una vez hecho lo anterior podemos comprobar, que remoteuser1 en nuestro caso, 
+               no pide contraseña al iniciar la conexión:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/public3.png"/>
+                </imageobject>
+               </sect1>
+                
+                
+                
+                <sect1>
+					<title>Uso de SSH como túnel para X</title>
+                <para>Un paso previo a seguir, es asegurarnos que la aplicación que queremos usar este solamente en el servidor y no en el cliente que solicitará los servicios.</para>
+                <para>Mediante ssh existe la posibilidad de ejecutar aplicaciones gráficas en el servidor y manejarlas y visualizarlas en el cliente. El servidor ssh deberá tener activada la redirección del protocolo X, es decir, deberá tener el siguiente parámetro en el archivo de configuración /etc/ssh/ssh_config:</para>
+				<imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/x0.png"/>
+                </imageobject>
+               <para>Una vez hecho lo anterior podremos conectarnos via SSH al servidor y ejecutar una aplicación que en el cliente no poseemos,en nuestro caso geany. Lo hacemos de la siguiente manera:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/x1.png"/>
+                </imageobject>
+                </sect1>
+                
+                
+                <sect1>
+					<title>Aplicaciones Windows nativas</title>
+                <para>Podemos tener aplicaciones Windows nativas, instaladas en ssh-server mediante el emulador WINE, por eso lo primero que hacemos es instalarlo en el servidor.</para>
+               <para>Instalamos una aplicación de Windows en el servidor SSH usando el emulador Wine. Por ejemplo en nuestro caso el notepad.Comprobamos que funciona en el servidor:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/wine1.png"/>
+                </imageobject>
+               <para>A continuación instalamos el Xming en nuestro cliente windows para que el proceso funcione correctamente: </para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/wine2.png"/>
+                </imageobject>
+               <para>Ahora activaremos lo siguiente en el PuTTY:</para>
+                
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/wine3.png"/>
+                </imageobject>
+                
+                <para>Ahora nos conectamos desde el PuTTY al servidor:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/wine4.png"/>
+                </imageobject>
+                <para>Luego ejecutamos lo siguiente y vemos que funciona correctamente:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/wine5.png"/>
+                </imageobject>
+                </sect1>
+                
+                
+                
+                <sect1>
+					<title>Restricciones de uso</title>
+                <para>- Restricción total:</para>
+               <para>En este caso lo que haremos sera modificar el siguiente fichero y escribir lo siguiente para que el usuario remoteuser2 no tenga acceso:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/rest1.png"/>
+                </imageobject>
+               <para>Ahora probaremos a conectarnos con remoteuser2 y nos muestra lo siguiente:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/rest2.png"/>
+                </imageobject>
+              
+               </sect1>
+                
+</sect1>
+
+
+
+<sect1>
+				<title>2. Windows </title>
+				<sect1>
+					<title>Preparativos</title>
+                <para>Configuramos las máquinas clientes y servidor tal y como nos dice el ejercicio. Usaremos:</para>
+               <para>-Un servidor Windows 2008 server</para>
+               <para>-Un cliente Debian</para>
+               <para>-Un cliente Windows</para>
+               </sect1>	
+
+
+
+				<sect1>
+					<title>Instalación básica</title>
+					<para>Para hacer la práctica en windows hemos seguido el tutorial propuesto en clase:</para> 
+                <para><ulink url="http://www.redeszone.net/windows/freesshd-para-windows-instalacion-y-manual-de-configuracion-de-freesshd-para-windows-servidor-ssh-y-sftp/">Tutorial de freeSSHd</ulink></para>
+                <para>Lo primero que tenemos que hacer es bajarnos en la pagina oficial de freeSSHd el paquete adecuado:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/1º.png"/>
+                </imageobject>
+               <para>Una vez descargado lo ejecutamos y seguimos los pasos de instalación:</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/2º.png"/>
+                </imageobject>
+               <para>Aceptamos:</para>
+               
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/3º.png"/>
+                </imageobject>
+                <para>Lo ejecutamos como administrador:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/4º.png"/>
+                </imageobject>
+                <para>Nos debería salir el siguiente mensaje:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/5º.png"/>
+                </imageobject>
+                <para>Una vez abierto deberíamos verlo en la esquina inferior derecha de nuestra pantalla:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/6º.png"/>
+                </imageobject>
+                <para>Este sería el freeSSHd iniciado:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/7º.png"/>
+                </imageobject>
+                <para>Lo configuraremos con la ip del servidor y el puerto por defecto el 22:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/8º.png"/>
+                </imageobject>
+                <para>En algunos casos puede que el puerto nos de erro, a nosotros nos funcionó probando con diferentes puertos.</para>
+                <para>La autenticación la estableceremos de la siguiente manera, tal y como nos dice el tutorial:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/9º.png"/>
+                </imageobject>
+                <para>La encriptación la dejamos por defecto:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/10º.png"/>
+                </imageobject>
+                <para>Ahora crearemos un usuario al cual se van a conectar los clientes, en nuesto caso remoteuser1</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/12º.png"/>
+                </imageobject>
+                <para>Ahora desde el cliente windows, ejecutaremos el programa PuTTY que podemos descargar desde su página oficial, y le establecemos la ip del servidor y el puerto establecido en el mismo anteriormente:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/10.png"/>
+                </imageobject>
+                <para>Si todo esta bien se nos habrira una consola pidiendo el usuario y la contraseña y se podrá establecer la conexión como se ve a continuación: </para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/11º.png"/>
+                </imageobject>
+                <para>Ahora nos conectamos a través del cliente debian, pero por el puerto 999 ya que con el de por defecto nos daba error:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/13º.png"/>
+                </imageobject>
+                <para>Aqui vemos el contenido del archivo known_hosts:</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/15º.png"/>
+                </imageobject>
+                </sect1>
+</sect1>
+
+                
+                
+     
+</chapter>
+	

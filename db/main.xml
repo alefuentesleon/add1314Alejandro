@@ -9,12 +9,14 @@ Trabajos curso completo
 		<personname>
 			<firstname>Alejandro</firstname>
 			<surname>Fuentes León</surname>
+			<firstname>Guzmán</firstname>
+			<surname>Martín Martín</surname>
 		</personname>
    </author>
 </info>
 
-<xi:include href="activity1.xml" />
-<xi:include href="activity2.xml" />
-<xi:include href="activity3.xml" />
+<xi:include href="units/unit1/activity1.xml" />
+<xi:include href="units/unit1/activity2.xml" />
+<xi:include href="units/unit1/activity3.xml" />
 </book>
 
