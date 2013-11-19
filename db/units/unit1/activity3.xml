@@ -127,6 +127,41 @@
                <imageobject>
                              <imagedata scale="50" fileref="../../images/ssh/rest2.png"/>
                 </imageobject>
+                <para>- Restricción temporal:</para>
+               <para>Vamos a crear una script para activar/desactivar restricciones para uno de los usuarios.Primero vemos como está configurado el archivo free.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/rest41.png"/>
+                </imageobject>
+               <para>Aquí vemos como está configurado el archivo lock.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/rest42.png"/>
+                </imageobject>
+                 <para>Al ejecutar el script sin poner ningún argumento nos saldrán las siguientes opciones.Luego eligiremos "--lock".</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/rest43.png"/>
+                </imageobject>
+                <para></para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/sudo44.png"/>
+                </imageobject>
+              
+              <para>- Restricción sobre aplicaciones:</para>
+               <para>Vamos a crear una restricción de permisos sobre determinadas aplicaciones.Creamos el grupo remoteapp y añadimos el remoteuser4.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/441.png"/>
+                </imageobject>
+               <para>Ahora cambiamos los dueños de la aplicación que vamos a usar(geany) y los permisos que hay para usarlos.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/442.png"/>
+                </imageobject>
+                 <para>Hacemos una prueba desde el cliente con un usuario diferente al que pusimos</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/443.png"/>
+                </imageobject>
+                <para>A la hora de hacerlo con el usuario correcto nos permitirá abrir el geany.</para>
+                <imageobject>
+                             <imagedata scale="50" fileref="../../images/ssh/444.png"/>
+                </imageobject>
               
                </sect1>
                 

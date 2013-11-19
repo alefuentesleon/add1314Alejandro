@@ -127,7 +127,22 @@
                <imageobject>
                              <imagedata scale="50" fileref="imagenes/ssh/rest2.png"/>
                 </imageobject>
-              
+              <para>- Restricción temporal:</para>
+               <para>Vamos a crear una script para activar/desactivar restricciones para uno de los usuarios.Primero vemos como está configurado el archivo free.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="imagenes/ssh/rest41.png"/>
+                </imageobject>
+               <para>Aquí vemos como está configurado el archivo lock.</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="imagenes/ssh/rest42.png"/>
+                </imageobject>
+                 <para>Al ejecutar el script sin poner ningún argumento nos saldrán las siguientes opciones.Luego eligiremos "--lock".</para>
+               <imageobject>
+                             <imagedata scale="50" fileref="imagenes/ssh/rest43.png"/>
+                </imageobject>
+                <imageobject>
+                             <imagedata scale="50" fileref="imagenes/ssh/sudo44.png"/>
+                </imageobject>
                </sect1>
                 
 </sect1>
